@@ -19,9 +19,17 @@ class ConvertUtil {
     static String toPascalCase(String text) {
         char[] chars = text.toCharArray();
         StringBuilder sb = new StringBuilder(200);
+        boolean isNumber  = false;
         for (char aChar : chars) {
-            if (((int) aChar >= 65 && (int) aChar <= 90)||
-                    ((int) aChar >= 48 && (int) aChar <= 57)) {
+            if((int) aChar >= 48 && (int) aChar <= 57){
+                if(!isNumber){
+                    sb.append("_");
+                }
+                isNumber = true;
+            }else{
+                isNumber = false;
+            }
+            if ((int) aChar >= 65 && (int) aChar <= 90) {
                 sb.append("_");
             }
             sb.append(aChar);
