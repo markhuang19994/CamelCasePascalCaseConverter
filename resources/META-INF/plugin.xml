@@ -1,0 +1,42 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>CamelCase PascalCase Converter</name>
+  <version>1.0</version>
+  <vendor email="markhuang1993@gmail.com" url="">Mark</vendor>
+
+  <description><![CDATA[
+      <h1>帕斯卡與駝峰命名相互轉換插件</h1>
+      <hr><br>
+      <p><b>說明:</b><br>
+            1.如果選中的文件包含"_"則轉換為駝峰命名,其餘情況皆轉為帕斯卡命名<br>
+            2.本插件觸發方式: ctrl + shift + alt + Y 或者選單Code -> Convert name style
+      </p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <p>2018-07-25 第一版: 不知道該寫啥好，很尷尬，就當作沒有版本資訊吧...</p>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="Name.Convert" class="NameConvertAction" text="Convert name style" description="帕斯卡與駝峰命名相互轉換">
+      <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt Y"/>
+    </action>
+  </actions>
+
+</idea-plugin>
