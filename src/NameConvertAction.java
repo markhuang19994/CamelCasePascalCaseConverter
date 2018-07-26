@@ -22,7 +22,6 @@ public class NameConvertAction extends AnAction {
             return;
         }
         CaretModel caretModel = editor.getCaretModel();
-        List<CaretState> caretsAndSelections = caretModel.getCaretsAndSelections();
         List<Caret> carets = caretModel.getAllCarets();
 
         Runnable runnable = () -> {
